@@ -1,7 +1,7 @@
 {
   "name": "ai-memory-reader",
   "description": "Open CLAUDE.md and other AI agent memory files in AI Memory Reader — a native macOS & iOS app with beautiful markdown rendering, sidebar tree, in-page find, and edit mode. Complements claude-md-management (which writes/improves files) by providing a polished native viewer.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "nvwalj",
     "url": "https://github.com/nvwalj/ai-memory-reader"

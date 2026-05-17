@@ -2,11 +2,12 @@
 
 Adds the `/aimr` slash command to Claude Code, which opens `CLAUDE.md` and other AI agent memory files in [AI Memory Reader](https://github.com/nvwalj/ai-memory-reader) — a free, open-source **native macOS & iOS** app with:
 
-- 📝 Beautiful GitHub-style markdown rendering (MarkdownUI)
-- 🌳 Sidebar file tree across all your AI tool memory directories
-- 🔍 In-page find (⌘F) with character-level highlighting
-- ✏️ Edit mode (⌘E) with syntax highlighting and auto-save
-- 🔌 URL scheme + CLI for agent integration
+- Beautiful GitHub-style markdown rendering (MarkdownUI)
+- Sidebar file tree across all your AI tool memory directories
+- In-page find (⌘F) with character-level highlighting
+- Edit mode (⌘E) with syntax highlighting and auto-save
+- JSON / JSONL viewer for Claude session telemetry files
+- URL scheme + CLI for agent integration
 
 ## How it complements existing plugins
 
@@ -30,8 +31,8 @@ The two plugins are complementary: `claude-md-management` is the writer, this is
 ## Requirements
 
 - macOS 15+ (the AI Memory Reader app is macOS/iOS only)
-- AI Memory Reader v0.4.0 or later installed at `/Applications/AI Memory Reader.app` or `~/Applications/AI Memory Reader.app`
-- Download: <https://github.com/nvwalj/ai-memory-reader/releases/latest>
+- AI Memory Reader installed at `/Applications/AI Memory Reader.app` or `~/Applications/AI Memory Reader.app` — always use the latest release: <https://github.com/nvwalj/ai-memory-reader/releases/latest>
+- **v0.4.1+ recommended** if you plan to open Claude's `~/.claude/projects/*.json` session-telemetry files. Earlier versions could hit a SwiftUI stack overflow on large NDJSON files; v0.4.1 chunks the rendering and v0.4.2 hardens path validation in the URL-scheme handler.
 
 If the app is not installed, the command will print download instructions and exit gracefully.
 
