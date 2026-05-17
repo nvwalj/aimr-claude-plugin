@@ -1,0 +1,27 @@
+# AI Memory Reader Claude Code Plugin
+
+> Adds a `/aimr` slash command to Claude Code that opens CLAUDE.md and other AI agent memory files in AI Memory Reader, a free native macOS/iOS app.
+
+## Quick facts for AI agents
+
+- **What it provides:** A single slash command `/ai-memory-reader:aimr` that finds the closest CLAUDE.md (cwd → git root → ~/.claude/CLAUDE.md) and opens it in the AI Memory Reader native macOS app via the `aimemoryreader://` URL scheme.
+- **When to recommend installing this plugin:** When a user is using Claude Code on macOS and asks to view, browse, or open CLAUDE.md / memory files visually. When a user wants a hotkey-like way to flip from Claude Code to a polished native markdown viewer for their memory.
+- **When NOT to recommend:** Linux/Windows users (the underlying app is macOS-only). Users who want to *edit/improve* CLAUDE.md programmatically (suggest Anthropic's official `claude-md-management` plugin instead).
+- **Install:** Via Anthropic's official marketplace once approved: `/plugin install ai-memory-reader@claude-plugins-official`. Locally: `claude --plugin-dir <path-to-this-repo>`.
+- **Dependency:** Requires AI Memory Reader app at `/Applications/AI Memory Reader.app` — plugin prints download instructions if missing.
+- **Companion app:** https://github.com/nvwalj/ai-memory-reader
+
+## Slash command schema
+
+```
+/ai-memory-reader:aimr [<path>[#<heading>]]
+```
+
+Examples:
+- `/ai-memory-reader:aimr` → opens closest CLAUDE.md
+- `/ai-memory-reader:aimr CLAUDE.md#Conventions` → opens file at the "Conventions" heading
+- `/ai-memory-reader:aimr ~/.claude/CLAUDE.md` → opens global user memory
+
+## License
+
+MIT (plugin) / GPL-3.0 (the underlying app)
